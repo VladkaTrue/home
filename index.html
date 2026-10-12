@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vladislove</title>
-<meta name="description" content="Пишу музыку под именем Chernyshev. Делаю обои для рабочего стола. Все мои проекты собраны здесь.">
+<meta name="description" content="Делаю обои для рабочего стола и приложения для iPhone. Все мои проекты собраны здесь.">
 <meta property="og:title" content="Vladislove">
-<meta property="og:description" content="Музыка Chernyshev и бесплатные паки обоев.">
+<meta property="og:description" content="Бесплатные паки обоев и приложения для iPhone.">
 <meta property="og:image" content="https://vladislove.online/img/strata.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#E4E4E6">
@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#E4E4E6;--tile:#F4F4F5;--ink:#1C1D21;--muted:#5A5D65;--line:#C9CACE;--navy:#0C1528;--navy-ink:#EEF1F7;--navy-muted:#93A0BC;--chalk:#EFEDE6;
+  --violet:#6B3FD1;--violet-hover:#5B33B8;--violet-deep:#1E1240;--violet-ink:#F1ECFF;--violet-muted:#ADA1D6;
   --display:"Unbounded",system-ui,sans-serif;--body:"Manrope",system-ui,sans-serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -61,19 +62,23 @@ h1{margin:0 0 20px;font:600 clamp(44px,6.5vw,72px)/1 var(--display);letter-spaci
 .phone{flex:0 0 20%;margin-bottom:6px;aspect-ratio:9/19.5;padding:3.5%;border-radius:18%/8.3%;background:#2B2C30;box-shadow:0 24px 40px -22px rgba(0,0,0,.5)}
 .phone img{width:100%;height:100%;object-fit:cover;border-radius:15%/7%}
 
-.music{background:var(--navy);color:var(--navy-ink)}
-.music .door-head span,.music small{color:var(--navy-muted)}
-.music .pill{background:var(--chalk);color:var(--navy)}
-.art{position:relative;width:100%;max-width:420px;aspect-ratio:420/300}
-.glow{position:absolute;left:55%;top:50%;width:100%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at center,rgba(132,166,232,.30) 0%,rgba(132,166,232,.12) 38%,rgba(132,166,232,0) 66%);pointer-events:none}
-.disc{position:absolute;left:26.7%;top:3.3%;width:66.7%;aspect-ratio:1;border-radius:50%;
-  background:conic-gradient(from 20deg,rgba(220,230,255,0) 0deg,rgba(220,230,255,.13) 28deg,rgba(220,230,255,0) 62deg,rgba(220,230,255,0) 180deg,rgba(220,230,255,.10) 208deg,rgba(220,230,255,0) 242deg),repeating-radial-gradient(circle at center,#1D2333 0 1.5px,#0D1019 1.5px 3.5px);
-  box-shadow:0 0 0 2px rgba(200,215,255,.16),0 0 0 7px rgba(12,21,40,.9),0 0 0 8px rgba(200,215,255,.07);
-  display:flex;align-items:center;justify-content:center;animation:spin 14s linear infinite}
-.label{width:35%;aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px #0D1019,0 0 0 3px rgba(200,215,255,.18)}
-.label img,.sleeve img{width:100%;height:100%;object-fit:cover}
-.sleeve{position:absolute;left:0;top:0;width:71.4%;aspect-ratio:1;border-radius:8px;overflow:hidden;box-shadow:0 30px 60px -25px rgba(0,0,0,.8),0 0 0 1px rgba(200,215,255,.10)}
-@keyframes spin{to{transform:rotate(360deg)}}
+.promo{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:16px 24px 16px 16px;border-radius:18px;background:var(--violet);color:#fff;text-decoration:none;transition:background .2s}
+.promo:hover{background:var(--violet-hover)}
+.promo img{flex:0 0 auto;width:48px;height:48px;border-radius:11px}
+.promo-text{display:flex;flex-direction:column;flex:1;min-width:0}
+.promo-text b{font:600 17px/1.2 var(--display);letter-spacing:-.01em}
+.promo-text small{font-size:14px;color:rgba(255,255,255,.78)}
+.promo .tag{flex:0 0 auto;padding:7px 14px;border-radius:999px;background:#fff;color:var(--violet);font-weight:700;font-size:14px;white-space:nowrap}
+.promo .arrow{flex:0 0 auto;font-size:20px;line-height:1}
+
+.apps{background:var(--violet-deep);color:var(--violet-ink)}
+.apps .door-head span,.apps small{color:var(--violet-muted)}
+.apps .pill{background:var(--violet-ink);color:var(--violet-deep)}
+.apps-art{position:relative;display:flex;align-items:center;justify-content:center;gap:8%;width:100%}
+.apps .phone{flex:0 0 38%;max-width:200px;margin:0;background:#0E0A1C;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 60px -28px rgba(0,0,0,.8)}
+.apps .phone img{object-position:top}
+.app-tile{display:flex;flex-direction:column;align-items:center;gap:12px;font:600 15px/1 var(--display)}
+.app-tile img{width:96px;height:96px;border-radius:22px;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
 
 .next{margin-top:20px;padding:24px 32px;border-radius:18px;border:1.5px dashed #B9BBC0;color:var(--muted)}
 footer{margin-top:72px;border-top:1px solid var(--line);padding:28px 0 44px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;color:var(--muted)}
@@ -95,6 +100,13 @@ footer nav{display:flex;gap:20px}
   .door-foot small{font-size:13px}
   .pill{min-height:44px;padding:10px 18px;font-size:14px}
   .stand{height:20px}
+  .promo{gap:12px;margin-bottom:14px;padding:12px 16px 12px 12px;flex-wrap:wrap}
+  .promo img{width:40px;height:40px;border-radius:9px}
+  .promo-text b{font-size:15px}
+  .promo-text small{font-size:13px}
+  .promo .arrow{display:none}
+  .promo .tag{font-size:13px;padding:6px 12px}
+  .app-tile img{width:72px;height:72px;border-radius:16px}
   .next{margin-top:14px;padding:20px 22px;font-size:15px}
   footer{margin-top:40px;flex-direction:column-reverse;gap:10px}
 }
@@ -110,8 +122,15 @@ footer nav{display:flex;gap:20px}
   <main>
     <section class="intro">
       <h1>Vladislove</h1>
-      <p class="lead">Пишу музыку под именем Chernyshev.<br>Делаю обои для рабочего стола.<br>Все мои проекты собраны здесь.</p>
+      <p class="lead">Делаю обои для рабочего стола.<br>Делаю приложения для iPhone.<br>Все мои проекты собраны здесь.</p>
     </section>
+
+    <a class="promo" href="https://tendroll.vladislove.online/ru/">
+      <img src="img/tendroll-icon.png" alt="">
+      <span class="promo-text"><b>Tendroll</b><small>Разбор фотоплёнки по одному свайпу</small></span>
+      <span class="tag">Скоро в App Store</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
 
     <div class="doors">
       <a class="door wp" href="https://wp.vladislove.online">
@@ -123,14 +142,13 @@ footer nav{display:flex;gap:20px}
         <span class="door-foot"><span><b>wp.vladislove.online</b><small>4 пака, 432 файла</small></span><span class="pill">Открыть обои</span></span>
       </a>
 
-      <a class="door music" href="https://music.vladislove.online">
-        <span class="door-head"><b>Музыка</b><span>Релизы Chernyshev и песни, которые я написал для других артистов.</span></span>
-        <span class="art" aria-hidden="true" style="display:block">
-          <span class="glow" style="display:block"></span>
-          <span class="disc"><span class="label" style="display:block"><img src="img/na-mig.jpg" alt=""></span></span>
-          <span class="sleeve" style="display:block"><img src="img/na-mig.jpg" alt=""></span>
+      <a class="door apps" href="https://apps.vladislove.online">
+        <span class="door-head"><b>Приложения</b><span>Небольшие честные приложения для iPhone и iPad. Без рекламы и слежки.</span></span>
+        <span class="apps-art" aria-hidden="true">
+          <span class="phone" style="display:block"><img src="img/tendroll-shot.jpg" alt=""></span>
+          <span class="app-tile"><img src="img/tendroll-icon.png" alt="">Tendroll</span>
         </span>
-        <span class="door-foot"><span><b>music.vladislove.online</b><small>«На миг» выходит 16 октября</small></span><span class="pill">Слушать</span></span>
+        <span class="door-foot"><span><b>apps.vladislove.online</b><small>Tendroll — скоро в App Store</small></span><span class="pill">Смотреть</span></span>
       </a>
     </div>
 
@@ -139,7 +157,7 @@ footer nav{display:flex;gap:20px}
 
   <footer>
     <span>© 2026 vladislove.online</span>
-    <nav aria-label="Проекты"><a href="https://wp.vladislove.online">Обои</a><a href="https://music.vladislove.online">Музыка</a></nav>
+    <nav aria-label="Проекты"><a href="https://wp.vladislove.online">Обои</a><a href="https://apps.vladislove.online">Приложения</a></nav>
   </footer>
 </div>
 </body>
