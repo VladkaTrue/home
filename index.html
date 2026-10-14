@@ -53,14 +53,37 @@ h1{margin:0 0 20px;font:600 clamp(44px,6.5vw,72px)/1 var(--display);letter-spaci
 .wp{background:var(--tile);color:var(--ink)}
 .wp .door-head span,.wp small{color:var(--muted)}
 .wp .pill{background:var(--ink);color:var(--tile)}
-.desk{display:flex;align-items:flex-end;justify-content:center;gap:4%}
-.monitor{flex:0 0 74%}
-.screen{border-radius:12px;background:#2B2C30;padding:1.4%;box-shadow:0 24px 48px -26px rgba(0,0,0,.45)}
-.screen img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:5px}
-.stand{width:22%;height:34px;margin:0 auto;background:#3A3B40;clip-path:polygon(30% 0,70% 0,82% 100%,18% 100%)}
-.foot{width:34%;height:7px;margin:0 auto;border-radius:6px 6px 2px 2px;background:#2B2C30}
-.phone{flex:0 0 20%;margin-bottom:6px;aspect-ratio:9/19.5;padding:3.5%;border-radius:18%/8.3%;background:#2B2C30;box-shadow:0 24px 40px -22px rgba(0,0,0,.5)}
-.phone img{width:100%;height:100%;object-fit:cover;border-radius:15%/7%}
+.desk{position:relative;display:flex;align-items:flex-end;justify-content:center}
+.desk .imac{width:76%}
+.desk .phone-slot{display:block;width:19%;margin-left:-5%;margin-bottom:2%;position:relative;z-index:1}
+/* ── iPhone 17: тонкие ровные рамки, Dynamic Island, Action + громкость слева, боковая + Camera Control справа ── */
+.iphone{--f1:#D3DEEA;--f2:#8E9FB3;position:relative;display:block;width:100%;padding:1.2%;border-radius:16.2%/7.6%;
+  background:linear-gradient(140deg,var(--f1),var(--f2) 38%,var(--f1) 62%,var(--f2));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.45),0 40px 60px -30px rgba(0,0,0,.75)}
+.iphone.black{--f1:#5A5C62;--f2:#1E1F23}
+.iphone .glass{display:block;padding:3.3%;border-radius:15.4%/7.2%;background:#050505}
+.iphone .screen{position:relative;display:block;aspect-ratio:1206/2622;border-radius:12.4%/5.7%;overflow:hidden;background:#000;container-type:inline-size}
+.iphone .screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.iphone .island{position:absolute;top:1.6%;left:50%;width:31%;aspect-ratio:3.35;border-radius:999px;background:#000;transform:translateX(-50%);z-index:2}
+.iphone .clock{position:absolute;left:0;right:0;top:12%;text-align:center;color:#fff;font:600 22cqw/1 var(--display);letter-spacing:-.02em;text-shadow:0 1px 8px rgba(0,0,0,.25);z-index:1}
+.iphone .b{position:absolute;width:1.4%;border-radius:3px;background:linear-gradient(90deg,var(--f2),var(--f1))}
+.iphone .l{left:-1.1%}.iphone .r{right:-1.1%}
+.iphone .action{top:16%;height:4%}.iphone .vup{top:23.5%;height:7%}.iphone .vdn{top:32%;height:7%}
+.iphone .side{top:25%;height:10.5%}.iphone .cam{top:56%;height:5.5%;background:linear-gradient(90deg,#3c3c44,#6a6a74)}
+
+/* ── iMac 24": белая рамка, цветной «подбородок», плоская ножка-лопатка ── */
+.imac{--chin:#A9C9E6;--back:#7FA7CC;position:relative;display:block;width:100%}
+.imac .face{display:block;border-radius:3.4%/5.4%;overflow:hidden;background:var(--chin);box-shadow:0 40px 60px -36px rgba(0,0,0,.55)}
+.imac .bezel{position:relative;display:block;padding:2.1%;background:#F4F4F6}
+.imac .bezel::before{content:"";position:absolute;top:.75%;left:50%;width:.55%;aspect-ratio:1;border-radius:50%;background:#2B2B30;transform:translateX(-50%)}
+.imac .scr{position:relative;display:block;aspect-ratio:16/9;border-radius:.5%/.9%;overflow:hidden;background:#000}
+.imac .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.imac .chin{display:block;aspect-ratio:100/9.5}
+.imac .neck{display:block;width:24%;aspect-ratio:24/19;margin:0 auto;background:linear-gradient(180deg,var(--back),var(--chin) 70%);clip-path:polygon(5% 0,95% 0,100% 100%,0 100%)}
+.imac .shadow{display:block;width:34%;height:8px;margin:-4px auto 0;border-radius:50%;background:rgba(0,0,0,.22);filter:blur(4px)}
+
+.iphone.lavender{--f1:#DCD3F2;--f2:#9F94C4}
+
 
 .promo{display:flex;align-items:center;gap:16px;margin-bottom:20px;padding:16px 24px 16px 16px;border-radius:18px;background:var(--violet);color:#fff;text-decoration:none;transition:background .2s}
 .promo:hover{background:var(--violet-hover)}
@@ -71,14 +94,16 @@ h1{margin:0 0 20px;font:600 clamp(44px,6.5vw,72px)/1 var(--display);letter-spaci
 .promo .tag{flex:0 0 auto;padding:7px 14px;border-radius:999px;background:#fff;color:var(--violet);font-weight:700;font-size:14px;white-space:nowrap}
 .promo .arrow{flex:0 0 auto;font-size:20px;line-height:1}
 
-.apps{background:var(--violet-deep);color:var(--violet-ink)}
-.apps .door-head span,.apps small{color:var(--violet-muted)}
-.apps .pill{background:var(--violet-ink);color:var(--violet-deep)}
-.apps-art{position:relative;display:flex;align-items:center;justify-content:center;gap:8%;width:100%}
-.apps .phone{flex:0 0 38%;max-width:200px;margin:0;background:#0E0A1C;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 60px -28px rgba(0,0,0,.8)}
-.apps .phone img{object-position:top}
-.app-tile{display:flex;flex-direction:column;align-items:center;gap:12px;font:600 15px/1 var(--display)}
-.app-tile img{width:96px;height:96px;border-radius:22px;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+.apps{color:var(--violet-ink);
+  background:
+    radial-gradient(110% 75% at 0% 0%,#5A34C9 0%,rgba(90,52,201,0) 60%),
+    radial-gradient(95% 70% at 100% 100%,#D06A1C 0%,rgba(208,106,28,0) 62%),
+    linear-gradient(155deg,#22134A 0%,#2A1240 50%,#2E160F 100%)}
+.apps .door-head span,.apps small{color:#C8BDEB}
+.apps .pill{background:var(--violet-ink);color:#22134A}
+.duo{display:flex;align-items:center;justify-content:center;gap:7%;width:100%}
+.duo .phone-slot{display:block;width:min(200px,36%)}
+.duo .phone-slot:last-child{transform:translateY(7%)}
 
 .next{margin-top:20px;padding:24px 32px;border-radius:18px;border:1.5px dashed #B9BBC0;color:var(--muted)}
 footer{margin-top:72px;border-top:1px solid var(--line);padding:28px 0 44px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;color:var(--muted)}
@@ -99,14 +124,12 @@ footer nav{display:flex;gap:20px}
   .door-foot b{font-size:15px}
   .door-foot small{font-size:13px}
   .pill{min-height:44px;padding:10px 18px;font-size:14px}
-  .stand{height:20px}
   .promo{gap:12px;margin-bottom:14px;padding:12px 16px 12px 12px;flex-wrap:wrap}
   .promo img{width:40px;height:40px;border-radius:9px}
   .promo-text b{font-size:15px}
   .promo-text small{font-size:13px}
   .promo .arrow{display:none}
   .promo .tag{font-size:13px;padding:6px 12px}
-  .app-tile img{width:72px;height:72px;border-radius:16px}
   .next{margin-top:14px;padding:20px 22px;font-size:15px}
   footer{margin-top:40px;flex-direction:column-reverse;gap:10px}
 }
@@ -136,19 +159,19 @@ footer nav{display:flex;gap:20px}
       <a class="door wp" href="https://wp.vladislove.online">
         <span class="door-head"><b>Обои</b><span>Бесплатные паки для монитора, ultrawide и телефона. Можно примерить прямо на сайте.</span></span>
         <span class="desk" aria-hidden="true">
-          <span class="monitor"><span class="screen" style="display:block"><img src="img/strata.jpg" alt=""></span><span class="stand" style="display:block"></span><span class="foot" style="display:block"></span></span>
-          <span class="phone" style="display:block"><img src="img/gladiator.jpg" alt=""></span>
+          <span class="imac"><span class="face"><span class="bezel"><span class="scr"><img src="img/strata.jpg" alt=""></span></span><span class="chin"></span></span><span class="neck"></span><span class="shadow"></span></span>
+          <span class="phone-slot"><span class="iphone black"><span class="b l action"></span><span class="b l vup"></span><span class="b l vdn"></span><span class="b r side"></span><span class="b r cam"></span><span class="glass"><span class="screen"><img src="img/gladiator.jpg" alt=""><span class="clock" id="lock-clock">9:41</span><span class="island"></span></span></span></span></span>
         </span>
         <span class="door-foot"><span><b>wp.vladislove.online</b><small>4 пака, 432 файла</small></span><span class="pill">Открыть обои</span></span>
       </a>
 
       <a class="door apps" href="https://apps.vladislove.online/ru/">
         <span class="door-head"><b>Приложения</b><span>Небольшие честные приложения для iPhone и iPad. Без рекламы и слежки.</span></span>
-        <span class="apps-art" aria-hidden="true">
-          <span class="phone" style="display:block"><img src="img/tendroll-shot.jpg" alt=""></span>
-          <span class="app-tile"><img src="img/tendroll-icon.png" alt="">Tendroll</span>
+        <span class="duo" aria-hidden="true">
+          <span class="phone-slot"><span class="iphone lavender"><span class="b l action"></span><span class="b l vup"></span><span class="b l vdn"></span><span class="b r side"></span><span class="b r cam"></span><span class="glass"><span class="screen"><img src="img/tendroll-shot.jpg" alt=""><span class="island"></span></span></span></span></span>
+          <span class="phone-slot"><span class="iphone "><span class="b l action"></span><span class="b l vup"></span><span class="b l vdn"></span><span class="b r side"></span><span class="b r cam"></span><span class="glass"><span class="screen"><img src="img/hourfield-shot.jpg" alt=""><span class="island"></span></span></span></span></span>
         </span>
-        <span class="door-foot"><span><b>apps.vladislove.online</b><small>Tendroll — скоро в App Store</small></span><span class="pill">Смотреть</span></span>
+        <span class="door-foot"><span><b>apps.vladislove.online</b><small>Tendroll и Hourfield — скоро в App Store</small></span><span class="pill">Смотреть</span></span>
       </a>
     </div>
 
@@ -160,5 +183,10 @@ footer nav{display:flex;gap:20px}
     <nav aria-label="Проекты"><a href="https://wp.vladislove.online">Обои</a><a href="https://apps.vladislove.online/ru/">Приложения</a></nav>
   </footer>
 </div>
+<script>
+(function(){var c=document.getElementById('lock-clock');if(!c)return;
+function t(){var d=new Date();c.textContent=d.getHours()+':'+String(d.getMinutes()).padStart(2,'0')}
+t();setInterval(t,15000)})();
+</script>
 </body>
 </html>
